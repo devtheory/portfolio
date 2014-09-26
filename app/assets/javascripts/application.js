@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require contact
+//= require jquery.backstretch.min
+//= require jquery.easypiechart
+//= require jquery.flexslider.min
+//= require waypoints.min
+//= require jquery.masonry.min
+//= require jquery.scrollto
+//= require modernizr.min
+//= require respond.min
+//= require twitterFetcher_v10_min
+//= require designr
+
