@@ -276,22 +276,7 @@ undefined)new $.flexslider(this,options,instanceId++)});else{var $slider=$(this)
 	/*============================================
 	Backstretch Images
 	==============================================*/
-	$.backstretch('assets/header-bg.jpg');
-
-	$('body').append('<img class="preload-image" src="assets/contact-bg.jpg" style="display:none;"/>');
-
-	$('#about').waypoint(function(direction){
 	
-		if($('.preload-image').length){$('.preload-image').remove();}
-		
-		$('.backstretch').remove();
-	
-		if (direction=='down'){
-			$.backstretch('assets/contact-bg.jpg');
-		}else{
-			$.backstretch('assets/header-bg.jpg');
-		}
-	});
 	
 	/*============================================
 	Project Hover mask on IE
@@ -336,4 +321,12 @@ undefined)new $.flexslider(this,options,instanceId++)});else{var $slider=$(this)
 		},1000);
 	}
 
+	/*============================================
+	Hide Alerts
+	==============================================*/
+	$(document).ready(function(){
+				setTimeout(function(){
+			$('.alert').hide();
+		},3000);
+	})
 });	

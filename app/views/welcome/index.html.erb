@@ -80,12 +80,16 @@
             <li>
               <a href="#contact" class="scrollto">Contact Me</a>
             </li>
-            <li>
-              Sign in
-            </li>
-            <li>
-              Sign up
-            </li>
+            <% if current_user %>
+              <li> <%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li>
+                <%= link_to "Sign in", new_user_session_path %>
+              </li>
+              <li>
+                <%= link_to "Sign up", new_user_registration_path %>
+              </li>
+            <% end %>
           </ul>
         </div><!--End navbar-collapse -->
         
@@ -618,7 +622,24 @@
       
     </footer><!-- End footer -->
     
+    <script type="text/javascript">
+    $.backstretch('assets/header-bg.jpg');
+
+  $('body').append('<img class="preload-image" src="assets/contact-bg.jpg" style="display:none;"/>');
+
+  $('#about').waypoint(function(direction){
+  
+    if($('.preload-image').length){$('.preload-image').remove();}
     
+    $('.backstretch').remove();
+  
+    if (direction=='down'){
+      $.backstretch('assets/contact-bg.jpg');
+    }else{
+      $.backstretch('assets/header-bg.jpg');
+    }
+  });
+  </script>
 
   </body>
   
