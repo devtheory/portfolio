@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
   
   def index
-    @dev = User.find(1)
+    @dev = User.where(role: "dev")
   end
 
   def dashboard

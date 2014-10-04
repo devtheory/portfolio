@@ -30,6 +30,17 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :point_of_contact? %>
+    <%= f.text_field :poc, class: 'form-control', placeholder: 'Who will be making decisions regarding the product?' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :contact_number? %>
+    <%= f.text_field :phone, class: 'form-control', placeholder: 'Please provide a number where we can reach you' %>
+  </div>
+
+
+  <div class="form-group">
     <%= f.label :remarks %>
     <%= f.text_area :remarks, class: 'form-control', placeholder: "Any additional information you'd like to provide?" %>
   </div>

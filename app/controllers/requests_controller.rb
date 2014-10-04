@@ -45,6 +45,6 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require(:request).permit(:purpose, :timeline, :budget, :users_supported, :need_hosting, :remarks)
+    params.require(:request).permit(:purpose, :timeline, :budget, :users_supported, :need_hosting, :poc, :phone, :remarks)
   end
 end
