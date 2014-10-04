@@ -1,0 +1,15 @@
+<%= render "layouts/navbar" %>
+<br >
+<div class="col-md-6">
+  <% if @requests.count > 0 %>
+    <h2>Requests </h2>
+    <small>Click on a request to see more information about it.</small>
+      <ul class="list-group">
+        <% @requests.each do |request| %>
+          <li class="list-group-item"><%= link_to request.purpose, request_path(request) %></li>
+        <% end %>
+      </ul>
+  <% else %>
+    <p>You have no active requests. If you would like to request a quote, please click on <strong>New Request</strong> above to begin.</p>
+  <% end %>
+</div>

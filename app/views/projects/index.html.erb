@@ -1,0 +1,18 @@
+<%= render "layouts/navbar" %>
+<br />
+
+<div class="col-md-6">
+
+  <% if @projects.count > 0 %>
+    <h2>Projects </h2>
+    <small>Click on a project to see more information about it.</small>
+      <ul class="list-group">
+        <% @projects.each do |project| %>
+          <li class="list-group-item"><%= link_to project.name, project_path(project) %></li>
+        <% end %>
+      </ul>
+  <% else %>
+    <p>You have no active applications. Once your application development has begun, you will be able to see it's current status here. If you would like to request a quote and get a new application going, please click on <strong>New Request</strong> above to begin the process.</p>
+  <% end %>
+
+</div>

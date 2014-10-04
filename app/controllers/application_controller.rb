@@ -5,9 +5,13 @@ class ApplicationController < ActionController::Base
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # def after_sign_in_path_for(resource)
-  #   "where to move user after sign in"
-  # end
+  def after_sign_in_path_for(resource)
+    if resource.role == "dev"
+      projects_path
+    else
+      requests_path
+    end
+  end
   
   protected
 

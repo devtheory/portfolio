@@ -1,0 +1,14 @@
+<%= render "layouts/navbar" %>
+<br >
+
+<div class="col-md-6">
+  <ul class="list-group">
+    <li class="list-group-item"><strong>Purpose:</strong> <%= @request.purpose %></li>
+    <li class="list-group-item"><strong>Timeline:</strong> <%= @request.timeline %></li>
+    <li class="list-group-item"><strong>Budget:</strong> <%= @request.budget %></li>
+    <li class="list-group-item"><strong>Users supported:</strong> <%= @request.users_supported %></li>
+    <li class="list-group-item"><strong>Need hosting?:</strong> <%= @request.need_hosting %></li>
+    <li class="list-group-item"><strong>Remarks:</strong> <%= @request.remarks %></li>
+  </ul>
+  <%= link_to "Edit", edit_request_path(@request), class: "btn btn-warning" %>
+</div>
