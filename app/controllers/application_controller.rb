@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.role == "dev"
-      projects_path
+      welcome_dashboard_path
     else
       requests_path
     end

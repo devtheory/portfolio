@@ -2,6 +2,7 @@ class RequestsController < ApplicationController
   
   def new
     @request = Request.new
+    #authorize @request, role != dev
   end
 
   def create

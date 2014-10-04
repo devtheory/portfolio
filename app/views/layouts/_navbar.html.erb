@@ -14,9 +14,19 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to "My Applications", projects_path %></li>
-        <li><%= link_to "My Requests", requests_path %></li>
-        <li><%= link_to "New Request", new_request_path %></li>
+        <% if current_user.role.nil? %>
+          <li><%= link_to "My Applications", projects_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Requests <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "Active Requests", requests_path %></li>
+              <li><%= link_to "New Request", new_request_path %></li>
+            </ul>
+          </li> 
+          
+        <% else %>
+          <li><%= link_to "Dashboard", welcome_dashboard_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
